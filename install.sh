@@ -87,10 +87,11 @@ step_3_database() {
 step_4_kogimanager_download() {
   echo "---------------------------------------------------------------------"
   echo "${JAUNE}Commence l'étape 4 téléchargement de Kogimanager${NORMAL}"
+  read -s -p "Entrer Token: " token
 
   dl_kogimanager() {
     echo "${JAUNE}Commence le téléchargement de Kogimanager${NORMAL}"
-    git clone https://idhe-dev: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@github.com/emahrv/Kogimanager.git
+    git clone https://idhe-dev:$token@github.com/emahrv/Kogimanager.git
     if [ $? -ne 0 ]; then
       echo "${ROUGE}Ne peut télécharger Kogimanager depuis github${NORMAL}"
       read -p "Réessayer ? (Y/n)" 1 -r
