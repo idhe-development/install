@@ -117,7 +117,7 @@ step_5_kogimanager_database_configuration() {
   echo "DROP USER 'admin'@'localhost';" | mysql -uroot -p${MYSQL_ROOT_PASSWD} > /dev/null 2>&1
   mysql_sql "CREATE USER 'admin'@'localhost' IDENTIFIED BY '${MYSQL_ADMIN_PASSWD}';"
   mysql_sql "GRANT ALL PRIVILEGES ON kogimanager.* TO 'admin'@'localhost';"
-  mysql_sql "source /home/kogimanager/Kogimanager/kogimanager.sql"
+  mysql_sql "source /home/$USER/Kogimanager/kogimanager.sql"
   echo "${VERT}étape 5 configuration de la base de donnée de Kogimanager réussie${NORMAL}"
 }
 
