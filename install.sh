@@ -91,7 +91,7 @@ step_4_kogimanager_download() {
 
   dl_kogimanager() {
     echo "${JAUNE}Commence le téléchargement de Kogimanager${NORMAL}"
-    git clone https://idhe-dev:$token@github.com/emahrv/Kogimanager.git
+    git clone https://idhe-dev:$token@github.com/idhe-development/Kogimanager.git
     if [ $? -ne 0 ]; then
       echo "${ROUGE}Ne peut télécharger Kogimanager depuis github${NORMAL}"
       read -p "Réessayer ? (Y/n)" 1 -r
