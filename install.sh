@@ -48,7 +48,7 @@ step_2_mainpackage() {
   apt-get -y install git
   apt -y remove node
   apt -y remove nodejs
-  curl -sL https://deb.nodesource.com/setup_10.x|sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_14.x|sudo -E bash -
   apt-get install -y nodejs
   apt-get -y install npm
   echo "${VERT}étape 2 paquet principal réussie${NORMAL}"
@@ -87,7 +87,7 @@ step_3_database() {
 step_4_kogimanager_download() {
   echo "---------------------------------------------------------------------"
   echo "${JAUNE}Commence l'étape 4 téléchargement de Kogimanager${NORMAL}"
-  read -s -p "Entrer Token: " token
+  read -p "Entrer Token: " token
 
   dl_kogimanager() {
     echo "${JAUNE}Commence le téléchargement de Kogimanager${NORMAL}"
