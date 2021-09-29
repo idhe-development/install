@@ -106,6 +106,7 @@ step_4_kogimanager_download() {
     else
       echo "${VERT}étape 4 téléchargement de Kogimanager réussie${NORMAL}"
       cd Kogimanager
+      sudo npm install
     fi
   }
   dl_kogimanager
