@@ -44,7 +44,6 @@ step_1_upgrade() {
 step_2_mainpackage() {
   echo "---------------------------------------------------------------------"
   echo "${JAUNE}Commence l'étape 2 paquet principal${NORMAL}"
-  apt_install ntp ca-certificates unzip curl sudo cron
   apt-get -y install git
   apt -y remove node
   apt -y remove nodejs
@@ -59,7 +58,7 @@ step_3_database() {
   echo "${JAUNE}Commence l'étape 3 base de données${NORMAL}"
   echo "mysql-server mysql-server/root_password password ${MYSQL_ROOT_PASSWD}" | debconf-set-selections
   echo "mysql-server mysql-server/root_password_again password ${MYSQL_ROOT_PASSWD}" | debconf-set-selections
-  apt_install mariadb-client mariadb-common mariadb-server
+  apt_install mariadb-server
   
   mysqladmin -u root password ${MYSQL_ROOT_PASSWD}
   
